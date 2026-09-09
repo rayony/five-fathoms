@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #071018;
+  --color-surface: #0e1c26;
+  --color-surface-2: #152430;
+  --color-fg: #e7eef2;
+  --color-muted: #8aa0ad;
+  --color-subtle: #5c7380;
+  --color-accent: #8fd0d0;
+  --color-accent-fg: #062023;
+  --color-danger: #d4786a;
+  --color-pearl: #d9ecec;
+  --color-border: color-mix(in oklab, var(--color-fg) 14%, transparent);
+
+  --font-sans: "Noto Sans TC", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Noto Serif TC", "Noto Sans TC", serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --motion-stagger: 40ms;
+  --motion-micro: 80ms;
+  --motion-quick: 150ms;
+  --motion-fast: 250ms;
+  --motion-medium: 350ms;
+  --motion-slow: 400ms;
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-image:
+      radial-gradient(1200px 500px at 50% -10%, color-mix(in oklab, var(--color-accent) 10%, transparent), transparent 60%),
+      radial-gradient(900px 420px at 100% 100%, color-mix(in oklab, var(--color-bg) 0%, #02080c), transparent 55%);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+@keyframes ff-shake {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  8% {
+    transform: translate3d(-9px, 5px, 0) rotate(-0.6deg);
+  }
+  16% {
+    transform: translate3d(10px, -6px, 0) rotate(0.7deg);
+  }
+  24% {
+    transform: translate3d(-8px, -4px, 0) rotate(-0.5deg);
+  }
+  32% {
+    transform: translate3d(9px, 5px, 0) rotate(0.4deg);
+  }
+  42% {
+    transform: translate3d(-5px, 6px, 0);
+  }
+  52% {
+    transform: translate3d(6px, -4px, 0);
+  }
+  64% {
+    transform: translate3d(-4px, 3px, 0);
+  }
+  76% {
+    transform: translate3d(3px, -2px, 0);
+  }
+  88% {
+    transform: translate3d(-2px, 1px, 0);
+  }
+}
+
+@keyframes ff-pulse-danger {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.85;
+  }
+  22% {
+    opacity: 0.42;
+  }
+  100% {
+    opacity: 0.28;
+  }
+}
+
+@keyframes ff-silt-fall {
+  0% {
+    transform: translate3d(0, -12%, 0);
+  }
+  100% {
+    transform: translate3d(8px, 110vh, 0);
+  }
+}
+
+@keyframes ff-ceremony-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes ff-card-hot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-danger) 0%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in oklab, var(--color-danger) 28%, transparent);
+  }
+}
+
+.ff-shake {
+  animation: ff-shake 1400ms var(--ease-smooth-out) both;
+}
+
+.ff-collapse-veil {
+  background: radial-gradient(
+    120% 80% at 50% 40%,
+    color-mix(in oklab, var(--color-danger) 38%, transparent),
+    color-mix(in oklab, var(--color-bg) 70%, transparent) 70%
+  );
+  animation: ff-pulse-danger 1600ms var(--ease-smooth-out) both;
+}
+
+.ff-silt-speck {
+  position: absolute;
+  top: -8%;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--color-fg) 35%, var(--color-danger));
+  animation-name: ff-silt-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.ff-ceremony-in {
+  animation: ff-ceremony-in 420ms var(--ease-smooth-out) both;
+}
+
+.ff-card-hot {
+  animation: ff-card-hot 900ms ease-in-out infinite;
+}
+
+@keyframes ff-burst {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(16px);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1.12) translateY(0);
+  }
+  18% {
+    transform: scale(1);
+  }
+  78% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.86) translateY(-28px);
+  }
+}
+
+.ff-burst {
+  animation: ff-burst 2800ms var(--ease-smooth-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ff-shake,
+  .ff-silt-speck,
+  .ff-card-hot,
+  .ff-collapse-veil,
+  .ff-ceremony-in,
+  .ff-burst {
+    animation: none;
+  }
+}

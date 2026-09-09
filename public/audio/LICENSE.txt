@@ -1,0 +1,26 @@
+Five Fathoms audio — all CC0 / public domain, no credit required.
+
+BGM
+  bgm-wreck.ogg
+  "Underwater Ambient Pad" by isaiah658
+  https://opengameart.org/content/underwater-ambient-pad
+  CC0
+
+SFX
+  sfx-collapse.ogg
+  "underwater or space engine rumble" by gmason
+  https://opengameart.org/content/underwater-or-space-engine-rumble
+  CC0
+
+  sfx-bubble.wav
+  "Bubble Sound Effects" by BMacZero (Brian MacIntosh)
+  https://opengameart.org/content/bubble-sound-effects
+  CC0
+
+  Remaining UI one-shots from Kenney Interface Sounds
+  https://kenney.nl/assets/interface-sounds
+  CC0
+
+  sfx-react-down.ogg, sfx-react-up.ogg, sfx-react-salute.ogg,
+  sfx-react-boom.ogg, sfx-react-poop.ogg, sfx-react-tear.ogg
+  Short synthesized one-shots generated for Five Fathoms. CC0.
